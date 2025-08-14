@@ -7,7 +7,7 @@ Projet Data Engineering sur Azure pour récupérer, stocker, transformer et visu
 - Transformation : nettoyage et enrichissement
 - Stockage final : Azure SQL Database
 - Visualisation : Power BI
-- 
+  
 ## Stack technique
 - Python, Pandas
 - Azure Data Factory
