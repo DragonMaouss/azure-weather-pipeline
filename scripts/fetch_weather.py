@@ -14,6 +14,7 @@ data = r.json()
 df = pd.DataFrame(
     {"time": data["hourly"]["time"], "temperature": data["hourly"]["temperature_2m"]}
 )
+df["time"] = pd.to_datetime(df["time"])  # Convertir en datetime
 
 # Sauvegarde csv
 today = datetime.now().strftime("%d-%m-%Y")
