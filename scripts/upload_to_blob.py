@@ -1,13 +1,13 @@
 from azure.storage.blob import BlobServiceClient
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 # Connexion Azurite locale (clé par défaut)
-connect_str = (
-    "DefaultEndpointsProtocol=http;"
-    "AccountName=devstoreaccount1;"
-    "AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;"
-    "BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;"
-)
+connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+if not connect_str:
+    raise ValueError("Chaine de connexion azure non trouvée")
 
 container_name = "weather-data"
 
